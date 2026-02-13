@@ -197,16 +197,20 @@
             padding: 10px;
         }
 
-        .gallery img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 5px; /* Lebih tajam */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            filter: sepia(20%) brightness(95%); /* Sentuhan vintage */
-        }
+       .gallery img {
+    width: 100%;
+    /* --- PERUBAHAN DIMULAI DI SINI --- */
+    height: auto; /* Hapus tinggi tetap, biarkan tinggi menyesuaikan */
+    aspect-ratio: 4 / 3; /* Buat rasio aspek yang seragam (4:3 atau 1/1 untuk persegi) */
+    object-fit: contain; /* Ganti 'cover' dengan 'contain' agar foto tidak terpotong */
+    background-color: #f0f0f0; /* Tambahkan warna latar untuk area kosong jika rasio berbeda */
+    /* --- PERUBAHAN SELESAI DI SINI --- */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Hapus filter sepia jika ingin foto asli, atau biarkan jika suka efek vintage */
+    /* filter: sepia(20%) brightness(95%); */
 
         .gallery img:hover {
             transform: scale(1.05);
@@ -492,3 +496,4 @@
 </body>
 
 </html>
+
