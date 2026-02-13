@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Yeni Nur Anggraeni, dari Remon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        /* --- GAYA UMUM (INDIE FOLK) --- */
+        :root {
+            --primary-color: #a0522d; /* Sienna / Cokelat Tua */
+            --secondary-color: #d2b48c; /* Tan / Warna Kayu */
+            --text-color: #4a4a4a; /* Abu-abu Tua */
+            --bg-color: #fdfbf8; /* Off-White / Krim */
+            --accent-color: #c76e6e; /* Dusty Rose / Merah Tua Pudar */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* --- LAYAR PEMBUKA --- */
+        .entrance-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(74, 74, 74, 0.7), rgba(74, 74, 74, 0.7)), url('https://source.unsplash.com/random/1600x900/?forest,road') center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            transition: opacity 1s ease-out, visibility 1s ease-out;
+        }
+
+        .entrance-content {
+            text-align: center;
+            color: white;
+        }
+
+        .entrance-content h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .entrance-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .open-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+        }
+
+        .open-btn:hover {
+            transform: scale(1.05);
+            background-color: #b56060;
+        }
+
+        /* --- KONTEN UTAMA --- */
+        .main-content {
+            opacity: 0;
+            transition: opacity 1.5s ease-in;
+        }
+
+        .main-content.show {
+            opacity: 1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- ANIMASI DAUN MELAYANG --- */
+        .hearts-bg {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            top: -50px;
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            animation: fall linear infinite;
+            opacity: 0.4;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+
+        /* --- HEADER / JUDUL --- */
+        header {
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #777;
+            font-weight: 300;
+        }
+
+        /* --- GALERI --- */
+        .gallery-section, .video-section {
+            margin: 40px 0;
+        }
+
+        .gallery-section h2, .video-section h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px; /* Lebih tajam */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            filter: sepia(20%) brightness(95%); /* Sentuhan vintage */
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+        }
+
+        /* --- MODAL --- */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+
+        .modal-content {
+            margin: 5% auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 5px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        /* --- PESAN --- */
+        .message-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin: 40px 0;
+            text-align: left;
+        }
+
+        .message-section h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .message-section p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        /* --- PENUTUP --- */
+        .closing {
+            margin-top: 40px;
+        }
+
+        .signature {
+            margin-top: 20px;
+            font-family: 'Caveat', cursive;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            h1, .entrance-content h1 { font-size: 2.5rem; }
+            .modal-content { width: 95%; }
+            .message-section p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Layar Pembuka -->
+    <div class="entrance-overlay" id="entranceOverlay">
+        <div class="entrance-content">
+            <h1>Untuk Yeni Nur Anggraeni (Iney)</h1>
+            <p>Dari Remon</p>
+            <button class="open-btn" onclick="openSurprise()">Klik Ayy</button>
+        </div>
+    </div>
+
+    <!-- Latar belakang daun melayang -->
+    <div class="hearts-bg" id="heartsContainer"></div>
+
+    <!-- Konten Utama Halaman -->
+    <div class="main-content" id="mainContent">
+        <div class="container">
+            <header>
+                <h1>potret-potret kita yang belum terlalu banyak sengaja yang ku post foto kmu aja</h1>
+                <p class="subtitle">beberapa fragmen waktu yang berharga</p>
+            </header>
+
+            <main>
+                <!-- Galeri Foto -->
+                <section class="gallery-section">
+                    <h2>galeri foto</h2>
+                    <div class="gallery">
+                        <!-- GANTI 'foto1.jpg' dst dengan nama file foto Anda -->
+                        <img src="foto1.jpg" alt="Memory 1" onclick="openModal(this)">
+                        <img src="foto2.jpg" alt="Memory 2" onclick="openModal(this)">
+                        <img src="foto3.jpg" alt="Memory 3" onclick="openModal(this)">
+                        <img src="foto4.jpg" alt="Memory 4" onclick="openModal(this)">
+                    </div>
+                </section>
+
+                <!-- Galeri Video -->
+                <section class="video-section">
+                    <h2>moving pictures of us</h2>
+                    <div class="video-gallery">
+                        <!-- GANTI 'video1.mp4' dst dengan nama file video Anda -->
+                        <div class="video-container">
+                            <video controls>
+                                <source src="video1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="video-container">
+                            <video controls>
+                                <source src="video2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Pesan -->
+                <section class="message-section">
+                    <h2>beberapa hal yang ingin kukatakan</h2>
+                    <p>
+                        Ayy,
+                    </p>
+                    <br>
+                    <p>
+                        Aku tahu, cara aku kadang bikin kamu bingung. Mungkin kelihatan jauh, atau terlalu kalem. Maaf ya kalau aku sering susah dipegang. Sejujurnya, aku masih belajar bagaimana cara ngejelasin apa yang ada di kepala ini.
+                    </p>
+                    <br>
+                    <p>
+                        Tapi di balik semua itu, aku sayang kamu. Itu adalah satu-satunya hal yang pasti banget buat aku. Kamu itu tenangnya di tengah hari-hari yang nggak menentu. Kamu adalah alasan kenapa aku merasa 'beres'.
+                    </p>
+                    <br>
+                    <p>
+                        Terima kasih udah ada. Terima kasih udah sabar sama aku yang beginian.
+                    </p>
+                </section>
+
+                <!-- Penutup -->
+                <section class="closing">
+                    <p>semoga kita terus begini.</p>
+                    <p class="signature">Dari orang yang selalu membuat kmu sedih, Remon</p>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal Foto -->
+    <div id="photoModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- Elemen Audio (Dijadikan Hidden) -->
+    <audio id="bgMusic" loop>
+        <!-- GANTI 'lagu_kita.mp3' dengan nama file musik Anda -->
+        <source src="lagu_kita.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // --- FUNGSI UNTUK MEMBUKA HADIAH DAN MEMUTAR MUSIK ---
+        const overlay = document.getElementById('entranceOverlay');
+        const mainContent = document.getElementById('mainContent');
+        const bgMusic = document.getElementById('bgMusic');
+
+        function openSurprise() {
+            // Sembunyikan layar pembuka
+            overlay.style.opacity = '0';
+            overlay.style.visibility = 'hidden';
+
+            // Tampilkan konten utama
+            mainContent.classList.add('show');
+
+            // Mainkan musik
+            // `play()` mengembalikan Promise, jadi kita tangani errornya
+            bgMusic.play().catch(error => {
+                console.error("Autoplay was prevented:", error);
+                // Jika gagal, tidak ada apa-apa. Pengguna sudah klik.
+            });
+        }
+
+        // --- FUNGSI MODAL FOTO ---
+        function openModal(img) {
+            const modal = document.getElementById('photoModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'block';
+            modalImg.src = img.src;
+        }
+
+        function closeModal() {
+            document.getElementById('photoModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('photoModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // --- FUNGSI DAUN MELAYANG ---
+        function createLeaf() {
+            const heartsContainer = document.getElementById('heartsContainer');
+            const leaf = document.createElement('div');
+            leaf.classList.add('heart');
+            leaf.innerHTML = '🍂'; // Emoji daun
+            leaf.style.left = Math.random() * 100 + '%';
+            leaf.style.animationDuration = Math.random() * 3 + 5 + 's';
+            leaf.style.opacity = Math.random() * 0.5 + 0.2;
+            heartsContainer.appendChild(leaf);
+
+            setTimeout(() => {
+                leaf.remove();
+            }, 8000);
+        }
+
+        setInterval(createLeaf, 500);
+
+    </script>
+
+</body>
+</html>
