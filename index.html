@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untuk Yeni Nur Anggraeni, dari Remon</title>
+    <title>Valentine untuk Yeni Nur Anggraeni, dari Remon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
@@ -15,6 +15,8 @@
             --text-color: #4a4a4a; /* Abu-abu Tua */
             --bg-color: #fdfbf8; /* Off-White / Krim */
             --accent-color: #c76e6e; /* Dusty Rose / Merah Tua Pudar */
+            --valentine-red: #e63946; /* Merah Valentine */
+            --valentine-pink: #f1a7c4; /* Pink Valentine */
         }
 
         * {
@@ -39,7 +41,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(rgba(74, 74, 74, 0.7), rgba(74, 74, 74, 0.7)), url('https://source.unsplash.com/random/1600x900/?forest,road') center/cover no-repeat;
+            background: linear-gradient(rgba(74, 74, 74, 0.7), rgba(74, 74, 74, 0.7)), url('https://source.unsplash.com/random/1600x900/?valentine,roses') center/cover no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -64,6 +66,23 @@
             margin-bottom: 30px;
         }
 
+        .valentine-badge {
+            display: inline-block;
+            background-color: var(--valentine-red);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
         .open-btn {
             background-color: var(--accent-color);
             color: white;
@@ -79,7 +98,7 @@
 
         .open-btn:hover {
             transform: scale(1.05);
-            background-color: #b56060;
+            background-color: var(--valentine-red);
         }
 
         /* --- KONTEN UTAMA --- */
@@ -98,7 +117,7 @@
             padding: 20px;
         }
 
-        /* --- ANIMASI DAUN MELAYANG --- */
+        /* --- ANIMASI HATI MELAYANG --- */
         .hearts-bg {
             position: fixed;
             width: 100%;
@@ -113,7 +132,7 @@
         .heart {
             position: absolute;
             top: -50px;
-            color: var(--secondary-color);
+            color: var(--valentine-pink);
             font-size: 1.5rem;
             animation: fall linear infinite;
             opacity: 0.4;
@@ -141,6 +160,22 @@
             font-size: 1.2rem;
             color: #777;
             font-weight: 300;
+        }
+
+        /* --- VALENTINE BANNER --- */
+        .valentine-banner {
+            background: linear-gradient(135deg, var(--valentine-red), var(--valentine-pink));
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .valentine-banner h2 {
+            font-family: 'Caveat', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 5px;
         }
 
         /* --- GALERI --- */
@@ -257,6 +292,14 @@
             color: var(--text-color);
         }
 
+        .valentine-message {
+            background-color: rgba(241, 167, 196, 0.1);
+            border-left: 4px solid var(--valentine-pink);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
         /* --- PENUTUP --- */
         .closing {
             margin-top: 40px;
@@ -282,13 +325,14 @@
     <!-- Layar Pembuka -->
     <div class="entrance-overlay" id="entranceOverlay">
         <div class="entrance-content">
+            <div class="valentine-badge">Selamat Hari Valentine</div>
             <h1>Untuk Yeni Nur Anggraeni (Iney)</h1>
             <p>Dari Remon</p>
             <button class="open-btn" onclick="openSurprise()">Klik Ayy</button>
         </div>
     </div>
 
-    <!-- Latar belakang daun melayang -->
+    <!-- Latar belakang hati melayang -->
     <div class="hearts-bg" id="heartsContainer"></div>
 
     <!-- Konten Utama Halaman -->
@@ -299,16 +343,22 @@
                 <p class="subtitle">beberapa fragmen waktu yang berharga</p>
             </header>
 
+            <!-- Valentine Banner -->
+            <div class="valentine-banner">
+                <h2>♥ Selamat Hari Valentine, Sayang ♥</h2>
+                <p>Terima kasih sudah menjadi warna di hari-hariku</p>
+            </div>
+
             <main>
                 <!-- Galeri Foto -->
                 <section class="gallery-section">
                     <h2>galeri foto</h2>
                     <div class="gallery">
                         <!-- GANTI 'foto1.jpg' dst dengan nama file foto Anda -->
-                        <img src="foto1.jpg" alt="Memory 1" onclick="openModal(this)">
-                        <img src="foto2.jpg" alt="Memory 2" onclick="openModal(this)">
-                        <img src="foto3.jpg" alt="Memory 3" onclick="openModal(this)">
-                        <img src="foto4.jpg" alt="Memory 4" onclick="openModal(this)">
+                        <img src="iney1.jpeg" alt="Memory 1" onclick="openModal(this)">
+                        <img src="Foto Remon 4.jpeg" alt="Memory 2" onclick="openModal(this)">
+                        <img src="IMG-20251111-WA0016.jpg" alt="Memory 3" onclick="openModal(this)">
+                        <img src="IMG-20251111-WA0020.jpg" alt="Memory 4" onclick="openModal(this)">
                     </div>
                 </section>
 
@@ -319,7 +369,7 @@
                         <!-- GANTI 'video1.mp4' dst dengan nama file video Anda -->
                         <div class="video-container">
                             <video controls>
-                                <source src="video1.mp4" type="video/mp4">
+                                <source src="VID-20251231-WA0014.mp4" type="video/mp4">
                             </video>
                         </div>
                         <div class="video-container">
@@ -348,12 +398,19 @@
                     <p>
                         Terima kasih udah ada. Terima kasih udah sabar sama aku yang beginian.
                     </p>
+                    
+                    <div class="valentine-message">
+                        <p>
+                            Di hari Valentine ini, aku hanya ingin bilang bahwa kamu adalah hadiah terindah dalam hidupku. Setiap hari bersamamu terasa seperti Valentine, karena kamu membawa kebahagiaan yang tak ternilai. Aku cinta kamu, selamanya.
+                        </p>
+                    </div>
                 </section>
 
                 <!-- Penutup -->
                 <section class="closing">
                     <p>semoga kita terus begini.</p>
                     <p class="signature">Dari orang yang selalu membuat kmu sedih, Remon</p>
+                    <p style="margin-top: 10px; color: var(--valentine-red);">♥ Selamat Hari Valentine 2024 ♥</p>
                 </section>
             </main>
         </div>
@@ -412,25 +469,26 @@
             }
         }
 
-        // --- FUNGSI DAUN MELAYANG ---
-        function createLeaf() {
+        // --- FUNGSI HATI MELAYANG ---
+        function createHeart() {
             const heartsContainer = document.getElementById('heartsContainer');
-            const leaf = document.createElement('div');
-            leaf.classList.add('heart');
-            leaf.innerHTML = '🍂'; // Emoji daun
-            leaf.style.left = Math.random() * 100 + '%';
-            leaf.style.animationDuration = Math.random() * 3 + 5 + 's';
-            leaf.style.opacity = Math.random() * 0.5 + 0.2;
-            heartsContainer.appendChild(leaf);
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️'; // Emoji hati
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = Math.random() * 3 + 5 + 's';
+            heart.style.opacity = Math.random() * 0.5 + 0.2;
+            heartsContainer.appendChild(heart);
 
             setTimeout(() => {
-                leaf.remove();
+                heart.remove();
             }, 8000);
         }
 
-        setInterval(createLeaf, 500);
+        setInterval(createHeart, 500);
 
     </script>
 
 </body>
+
 </html>
