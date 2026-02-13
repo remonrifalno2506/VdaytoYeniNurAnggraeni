@@ -6,11 +6,12 @@
     <title>Valentine untuk Yeni Nur Anggraeni, dari Remon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <!-- PERUBAHAN FONT: Menggunakan Great Vibes dan Lora -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <style>
-        /* --- GAYA UMUM (INDIE FOLK) --- */
+        /* --- GAYA UMUM (ROMANTIK & ELEGAN) --- */
         :root {
-            --primary-color: #a0522d; /* Sienna / Cokelat Tua */
+            --primary-color: #8b4789; /* Ungu Tua Romantis */
             --secondary-color: #d2b48c; /* Tan / Warna Kayu */
             --text-color: #4a4a4a; /* Abu-abu Tua */
             --bg-color: #fdfbf8; /* Off-White / Krim */
@@ -26,10 +27,11 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            /* PERUBAHAN FONT: Body menggunakan Lora */
+            font-family: 'Lora', serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.7;
+            line-height: 1.8; /* Tambah jarak baris untuk kenyamanan membaca */
             text-align: center;
             overflow-x: hidden;
         }
@@ -54,16 +56,19 @@
             color: white;
         }
 
+        /* PERUBAHAN FONT: Judul menggunakan Great Vibes */
         .entrance-content h1 {
-            font-family: 'Caveat', cursive;
-            font-size: 3rem;
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem; /* Ukuran disesuaikan */
             margin-bottom: 10px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+            letter-spacing: 2px;
         }
 
         .entrance-content p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 30px;
+            font-weight: 500;
         }
 
         .valentine-badge {
@@ -75,6 +80,8 @@
             font-size: 0.9rem;
             margin-bottom: 20px;
             animation: pulse 2s infinite;
+            font-family: 'Lora', serif;
+            font-weight: 500;
         }
 
         @keyframes pulse {
@@ -92,8 +99,9 @@
             font-size: 1.1rem;
             cursor: pointer;
             transition: transform 0.3s ease, background-color 0.3s ease;
-            font-family: 'Poppins', sans-serif;
-            font-weight: 400;
+            /* PERUBAHAN FONT: Tombol menggunakan Lora */
+            font-family: 'Lora', serif;
+            font-weight: 500;
         }
 
         .open-btn:hover {
@@ -149,17 +157,21 @@
             padding: 40px 20px;
         }
 
+        /* PERUBAHAN FONT: Judul menggunakan Great Vibes */
         h1 {
-            font-family: 'Caveat', cursive;
-            font-size: 3.5rem;
+            font-family: 'Great Vibes', cursive;
+            font-size: 4.5rem; /* Ukuran disesuaikan */
             color: var(--primary-color);
             margin-bottom: 10px;
+            letter-spacing: 2px;
+            font-weight: 400; /* Great Vibes hanya memiliki satu weight */
         }
 
         .subtitle {
             font-size: 1.2rem;
             color: #777;
-            font-weight: 300;
+            font-weight: 400; /* Sesuaikan dengan Lora */
+            font-style: italic;
         }
 
         /* --- VALENTINE BANNER --- */
@@ -172,10 +184,12 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
+        /* PERUBAHAN FONT: Judul Banner menggunakan Great Vibes */
         .valentine-banner h2 {
-            font-family: 'Caveat', cursive;
-            font-size: 2.5rem;
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem; /* Ukuran disesuaikan */
             margin-bottom: 5px;
+            letter-spacing: 1px;
         }
 
         /* --- GALERI --- */
@@ -183,11 +197,13 @@
             margin: 40px 0;
         }
 
+        /* PERUBAHAN FONT: Judul Section menggunakan Great Vibes */
         .gallery-section h2, .video-section h2 {
-            font-family: 'Caveat', cursive;
-            font-size: 2.5rem;
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem; /* Ukuran disesuaikan */
             color: var(--primary-color);
             margin-bottom: 20px;
+            letter-spacing: 1px;
         }
 
         .gallery {
@@ -197,20 +213,17 @@
             padding: 10px;
         }
 
-       .gallery img {
-    width: 100%;
-    /* --- PERUBAHAN DIMULAI DI SINI --- */
-    height: auto; /* Hapus tinggi tetap, biarkan tinggi menyesuaikan */
-    aspect-ratio: 4 / 3; /* Buat rasio aspek yang seragam (4:3 atau 1/1 untuk persegi) */
-    object-fit: contain; /* Ganti 'cover' dengan 'contain' agar foto tidak terpotong */
-    background-color: #f0f0f0; /* Tambahkan warna latar untuk area kosong jika rasio berbeda */
-    /* --- PERUBAHAN SELESAI DI SINI --- */
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Hapus filter sepia jika ingin foto asli, atau biarkan jika suka efek vintage */
-    /* filter: sepia(20%) brightness(95%); */
+        .gallery img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
         .gallery img:hover {
             transform: scale(1.05);
@@ -231,6 +244,7 @@
             border-radius: 5px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #000;
         }
 
         .video-container video {
@@ -240,6 +254,8 @@
             width: 100%;
             height: 100%;
             border-radius: 5px;
+            object-fit: contain;
+            background-color: #000;
         }
 
         /* --- MODAL --- */
@@ -271,6 +287,7 @@
             font-weight: bold;
             transition: 0.3s;
             cursor: pointer;
+            font-family: sans-serif; /* Tetap gunakan sans-serif untuk kejelasan */
         }
 
         /* --- PESAN --- */
@@ -283,12 +300,14 @@
             text-align: left;
         }
 
+        /* PERUBAHAN FONT: Judul Pesan menggunakan Great Vibes */
         .message-section h2 {
-            font-family: 'Caveat', cursive;
-            font-size: 2.5rem;
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.5rem; /* Ukuran disesuaikan */
             color: var(--primary-color);
             margin-bottom: 20px;
             text-align: center;
+            letter-spacing: 1px;
         }
 
         .message-section p {
@@ -309,18 +328,31 @@
             margin-top: 40px;
         }
 
+        /* PERUBAHAN FONT: Tanda tangan menggunakan Great Vibes */
         .signature {
             margin-top: 20px;
-            font-family: 'Caveat', cursive;
-            font-size: 2rem;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem; /* Ukuran disesuaikan */
             color: var(--primary-color);
+            letter-spacing: 1px;
         }
 
         /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            h1, .entrance-content h1 { font-size: 2.5rem; }
+            /* PERUBAHAN FONT: Sesuaikan ukuran font untuk layar kecil */
+            h1, .entrance-content h1 { font-size: 3rem; }
+            .gallery-section h2, .video-section h2, .message-section h2 { font-size: 2.5rem; }
+            .valentine-banner h2 { font-size: 2rem; }
+            .signature { font-size: 2rem; }
+            
             .modal-content { width: 95%; }
             .message-section p { font-size: 1rem; }
+            .gallery {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            .video-gallery {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -496,4 +528,3 @@
 </body>
 
 </html>
-
